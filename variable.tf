@@ -1,7 +1,6 @@
 variable "subscription_id"{
   type=string
 }
-
 variable "client_id"{
   type=string
 }
@@ -27,7 +26,6 @@ variable "cross_tenant_replication_enabled"{
  type=bool
  default=false
 }
-
 variable "environment"{
  type=string
  default="staging"
