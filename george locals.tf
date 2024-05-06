@@ -21,7 +21,7 @@ variable "nested_map" {
     group1 = {"name" = "George", "family" = "Ibrahim"}
     group2 = {"name" = "Halad", "family" = "Alabdine"}
     group3 = {"name" = "Julian", "family" = "Ibrahim"}
-    group3 = {"name" = "Christain", "family" = "Ibrahim"}
+    group4 = {"name" = "Christain", "family" = "Ibrahim"}
   }
 }
 locals{
