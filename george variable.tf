@@ -1,11 +1,11 @@
 variable "original_string" {
-  default = "HELLO WORLD"
+  default = "George Ibrahim"
 }
 variable "string_list" {
-  default = ["Hello, World"]
+  default = ["George, Ibrahim"]
 }
 variable "additional_string" {
-  default = "From Terraform "
+  default = "From Syria "
 }
 
 
