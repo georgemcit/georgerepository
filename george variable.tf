@@ -1,5 +1,5 @@
-variable "original_string" {​
-  default = "Hello World"​
+variable "original_string" {
+  default = "HELLO WORLD"
 }
 variable "string_list" {
   default = ["Hello, World"]
