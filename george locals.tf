@@ -18,9 +18,10 @@ variable "nested_list" {
 variable "nested_map" {
   type    = map(map(string))
   default = {
-    group1 = {"name" = "Alice", "age" = "25"}
-    group2 = {"name" = "Bob", "age" = "30"}
-    group3 = {"name" = "Charlie", "age" = "35"}
+    group1 = {"name" = "George", "family" = "Ibrahim"}
+    group2 = {"name" = "Halad", "family" = "Alabdine"}
+    group3 = {"name" = "Julian", "family" = "Ibrahim"}
+    group3 = {"name" = "Christain", "family" = "Ibrahim"}
   }
 }
 locals{
@@ -45,6 +46,9 @@ output "simple_local"{
 }
 output "flattened_list"{
     value = local.flattened_list
+}
+output "flattened_map"{
+    value = local.flattened_map
 }
 output "flattened_map"{
     value = local.flattened_map
