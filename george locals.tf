@@ -40,3 +40,6 @@ locals{
 output "sumotest"{
     value=sum ([for numberoutput in local.total_output: (numberoutput)])
 }
+output "simple_local"{
+    value = local.simple_local_flattened_list
+}
