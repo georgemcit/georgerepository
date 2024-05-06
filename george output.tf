@@ -11,7 +11,7 @@ output "concatenated_string" {
   value = "${var.additional_string}${var.original_string}"
 }
 output "replaced_string" {
-  value = replace(var.original_string, "HELLO", "HI")
+  value = replace(var.original_string, "George", "Julian")
 }
 output "substring_example" {
   value = substr(var.original_string, 6, -1)
@@ -23,12 +23,12 @@ output "reverse_example" {
   value = join("", reverse(split("", var.original_string)))
 }
 locals {
-  contains_keyword = contains(split(" ", var.original_string), "MCIT")
+  contains_keyword = contains(split(" ", var.original_string), "Ibrahim")
 }
 output "contains_keyword_output"{
     value=local.contains_keyword
 }
 output "string_contains_no_sample" {
-  value = local.contains_keyword ? "String contains 'HELLO'" : "String does not contain 'HELLO'"
+  value = local.contains_keyword ? "String contains 'George'" : "String does not contain 'Julian'"
 }
 
