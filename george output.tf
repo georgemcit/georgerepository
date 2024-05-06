@@ -10,6 +10,6 @@ output "lowercase_string" {
 output "concatenated_string" {
   value = "${var.additional_string}${var.original_string}"
 }
-output "replaced_string" {​
-  value = replace(var.original_string, "Hello", "Hi")​
-}​
+output "replaced_string" {
+  value = replace(var.original_string, "HELLO", "HI")
+}
