@@ -1,6 +1,11 @@
 variable "original_string" {​
   default = "Hello World"​
 }
-output "replaced_string" {​
-  value = replace(var.original_string, "Hello", "Hi")​
+variable "string_list" {
+  default = ["Hello, World"]
 }
+variable "additional_string" {
+  default = "From Terraform"
+}
+
+
