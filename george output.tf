@@ -19,3 +19,18 @@ output "substring_example" {
 output "split_example" {
   value = split(" ", var.original_string)
 }
+output "reverse_example" {
+  value = join("", reverse(split("", var.original_string)))
+}
+
+locals {
+  contains_keyword = contains(split(" ", var.original_string), "MCIT")
+}
+output "contains_keyword_output"{
+    value=local.contains_keyword
+}
+
+output "string_contains_no_sample" {
+  value = local.contains_keyword ? "String contains 'HELLO'" : "String does not contain 'HELLO'"
+}
+
