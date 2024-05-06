@@ -1,3 +1,28 @@
+variable "simple_nested_list" {
+  type    = list(list(string))
+   default = [["a", "b"], ["c", "d"], ["e", "f"]]
+}
+variable "map_presidents_countries" {
+  type    = list(list(string))
+   default = [["Obama","Justin","Kim jong Un"], ["United States","Canada", "North Korea"]]
+}
+variable "number_list" {
+  type    = list(list(string))
+   default = [[2,2,2],[1,2,3],[2,3,2],[3,1,3]]
+}
+variable "nested_list" {
+  type    = list(list(string))
+  default = [["a", "b"], ["c", "d"], ["e", "f"]]
+}
+
+variable "nested_map" {
+  type    = map(map(string))
+  default = {
+    group1 = {"name" = "Alice", "age" = "25"}
+    group2 = {"name" = "Bob", "age" = "30"}
+    group3 = {"name" = "Charlie", "age" = "35"}
+  }
+}
 locals{
    simple_local_flattened_list = flatten(var.simple_nested_list)
    number_list = flatten(var.number_list)
