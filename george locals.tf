@@ -46,3 +46,6 @@ output "simple_local"{
 output "flattened_list"{
     value = local.flattened_list
 }
+output "flattened_map"{
+    value = local.flattened_map
+}
