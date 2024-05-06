@@ -50,6 +50,4 @@ output "flattened_list"{
 output "flattened_map"{
     value = local.flattened_map
 }
-output "flattened_map"{
-    value = local.flattened_map
-}
+
