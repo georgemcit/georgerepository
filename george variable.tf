@@ -15,8 +15,13 @@ locals {
   incremented_output_george = [
     for value in var.total_output_george : tostring((value) + 10)
   ]
+incremented_output_george1 = [
+    for value in var.total_output_george : tostring((value) - 10)
+  ]
 }
 output "incremented_output_george_show" {
   value=local.incremented_output_george
 }
-
+output "incremented_output_george1_show" {
+  value=local.incremented_output_george1
+}
