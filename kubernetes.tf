@@ -24,7 +24,7 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimcluster" {
 }
 resource "azurerm_kubernetes_cluster" "george" {
   for_each            = {for cluster in local.cluster_list: cluster=>cluster}
-  name                = "${var.prefix}george"
+  name                = "${var.prefix}cluster"
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
   dns_prefix          = "ccrf2301"
