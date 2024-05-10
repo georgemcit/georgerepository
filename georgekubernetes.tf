@@ -6,7 +6,7 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimcluster" {
   name                = "georgeibrahimcluster"
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
-  dns_prefix          = "ccrf2301"
+  dns_prefix          = "george"
 
   default_node_pool {
     name       = "default"
@@ -27,7 +27,7 @@ resource "azurerm_kubernetes_cluster" "george" {
   name                = "${var.prefix}cluster"
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
-  dns_prefix          = "ccrf2301"
+  dns_prefix          = "george"
 
   default_node_pool {
     name       = "default"
@@ -43,70 +43,7 @@ resource "azurerm_kubernetes_cluster" "george" {
     Environment = "Production"
   }
 }
-output "kube_name"{
-  value=[for cluster in azurerm_kubernetes_cluster.george:cluster.name ]
-}
-variable "identity"{
+variable "prefix"{
  type=string
- default="SystemAssigned"
-}
-output "identity" {
-  value = var.identity
-}
-variable "tags"{
- type=string
- default= "Production"
-}
-output "tags" {
-  value = var.tags
-}
-resource "azurerm_kubernetes_cluster_node_pool" "kube1nodepool" {
-for_each               = azurerm_kubernetes_cluster.george
-name                   = "${each.key}"
-kubernetes_cluster_id  = each.value.id
-vm_size                = "Standard_DS2_v2"
-node_count             = 1 
-  tags = {
-    Environment = "Production"
-  }
-}
-output "id" {
-  value = [
-    for cluster in azurerm_kubernetes_cluster.george: cluster.id
-  ]
-}
- 
-output "kube_config" {
-  sensitive = true
-  value = [ 
-    for cluster in azurerm_kubernetes_cluster.george: cluster.kube_config_raw
-  ]
-}
- 
-output "client_key" {
-  sensitive = true
-  value = [
-    for cluster in azurerm_kubernetes_cluster.george: cluster.kube_config.0.client_key
-  ]
-}
- 
-output "client_certificate" {
-  sensitive = true
-  value = [
-    for cluster in azurerm_kubernetes_cluster.george: cluster.kube_config.0.client_certificate
-  ]
-}
- 
-output "cluster_ca_certificate" {
-  sensitive = true
-  value = [
-    for cluster in azurerm_kubernetes_cluster.george: cluster.kube_config.0.cluster_ca_certificate
-  ]
-}
- 
-output "host" {
-  sensitive = true
-  value = [
-    for cluster in azurerm_kubernetes_cluster.george: cluster.kube_config.0.host
-  ]
+ default="george"
 }
