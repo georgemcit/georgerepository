@@ -6,7 +6,7 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimcluster" {
   name                = "georgeibrahimcluster"
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
-  dns_prefix          = "ccrf2301"
+  dns_prefix          = "george"
 
   default_node_pool {
     name       = "default"
@@ -27,7 +27,7 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimclustermcit" {
   name                = "${var.prefix}cluster"
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
-  dns_prefix          = "ccrf2301"
+  dns_prefix          = "george"
 
   default_node_pool {
     name       = "default"
@@ -43,6 +43,4 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimclustermcit" {
     Environment = "Production"
   }
 }
-output "kube_name"{
-  value=[for cluster in azurerm_kubernetes_cluster.george:cluster.name ]
-}
+
