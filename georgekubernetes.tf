@@ -3,7 +3,7 @@ locals{
    cluster_list=["montreal","toronto","vancouver","alberta"]
 }
 resource "azurerm_kubernetes_cluster" "georgeibrahimcluster" {
-  name                = "georgeibrahimcluster"{
+  name                = "georgeibrahimcluster"
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
   dns_prefix          = "george"
@@ -24,7 +24,7 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimcluster" {
 }
 resource "azurerm_kubernetes_cluster" "georgeibrahimclustermcit" {
   for_each            = {for cluster in local.cluster_list: cluster=>cluster}
-  name                = "${var.prefix}cluster"
+  name                = {"${var.prefix}cluster"}
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
   dns_prefix          = "george"
