@@ -42,3 +42,20 @@ resource "azurerm_kubernetes_cluster" "george" {
     Environment = "Production"
   }
 }
+output "kube_name"{
+  value=[for cluster in azurerm_kubernetes_cluster.george:cluster.name ]
+}
+variable "identity"{
+ type=string
+ default="SystemAssigned"
+}
+output "identity" {
+  value = var.identity
+}
+variable "tags"{
+ type=string
+ default= "Production"
+}
+output "tags" {
+  value = var.tags
+}
