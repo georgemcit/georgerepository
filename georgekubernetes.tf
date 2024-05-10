@@ -23,9 +23,3 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimcluster" {
   }
 }
 
-
-  tags = {
-    Environment = "Production"
-  }
-}
-
