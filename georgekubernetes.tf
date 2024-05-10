@@ -27,7 +27,7 @@ resource "azurerm_kubernetes_cluster" "georgeibrahimclustermcit" {
   name                = "${var.prefix}cluster"
   location            = azurerm_resource_group.azureresourcegroup.location
   resource_group_name = azurerm_resource_group.azureresourcegroup.name
-  dns_prefix          = var.prefix
+  dns_prefix          = "george1"
 
   default_node_pool {
     name       = "default"
